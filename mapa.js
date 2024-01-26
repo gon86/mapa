@@ -1,5 +1,8 @@
 //var map = L.map('map');
 //var map = L.map('map').setView([51.505, -0.09], 18);
+
+alert('hola mundo');
+
 var map = L.map('map'/*, { closePopupOnClick: false }*/).fitWorld();
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -25,9 +28,10 @@ map.on('click', onMapClick);
 map.locate({setView: true, maxZoom: 18});
 
 function onLocationFound(e){ 
-	alert(`Latitud: ${e.latitude} Longitud: ${e.longitude}`);
+	//alert(`Latitud: ${e.latitude} Longitud: ${e.longitude}`);
+	alert('ubicacion encontrada');
 
-	const circle = L.circle([e.latitude, e.longitude], {
+	/*const circle = L.circle([e.latitude, e.longitude], {
 		fill: false,
 		stroke: false,
 		radius: 20,
@@ -39,7 +43,7 @@ function onLocationFound(e){
 	const tooltip = L.tooltip({ permanent: true, direction: 'top' })
 		.setLatLng(e.latlng)
 		.setContent('<div style="color: #e06907; font-size: 18px;">Aquí fué vista la mascota.</div>')
-		.addTo(map);
+		.addTo(map);*/
 }
 
 function onLocationError(e){
