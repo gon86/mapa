@@ -25,6 +25,8 @@ map.on('click', onMapClick);
 map.locate({setView: true, maxZoom: 18});
 
 function onLocationFound(e){ 
+	alert(`Latitud: ${e.latitude} Longitud: ${e.longitude}`);
+
 	const circle = L.circle([e.latitude, e.longitude], {
 		fill: false,
 		stroke: false,
