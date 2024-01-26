@@ -1,9 +1,9 @@
-alert('hola mundo');
+//alert('hola mundo de nuevo');
 
 //var map = L.map('map');
 //var map = L.map('map').setView([51.505, -0.09], 18);
 
-/*
+
 var map = L.map('map').fitWorld();
 //var map = L.map('map', { closePopupOnClick: false }).fitWorld();
 
@@ -11,7 +11,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-*/
+
 /*var marker = L.marker([51.5, -0.09]).addTo(map)
 	.bindPopup('A pretty CSS popup.<br> Easily customizable.')
 	.openPopup();*/
@@ -20,7 +20,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     .setLatLng([51.513, -0.09])
     .setContent("I am a standalone popup.")
     .openOn(map);*/
-	/*
+	
 function onMapClick(e) {
     console.log("Coordenadas: " + e.latlng);
 }
@@ -55,4 +55,3 @@ function onLocationError(e){
 map.on('locationfound', onLocationFound);
 
 map.on('locationerror', onLocationError);
-*/
