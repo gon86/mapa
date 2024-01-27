@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Prueba</title>
+</head>
+<body>
+	 <div id="mensaje">Cargando el mensaje...</div>
+	 <button onclick="getLocation();">Obtener ubicacion</button>
+	 <script>
+		const mensaje = document.getElementById("mensaje");
+
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition, showError);
+			} else {
+				mensaje.innerHTML = "Geolocalizacion no soportada en este navegador.";
+			}
+		}
+
+		function showPosition(position) {
+			mensaje.innerHTML = "Latitud: " + position.coords.latitude +
+			"<br>Longitud: " + position.coords.longitude;
+		}
+		
+		function showError(error) {
+			switch(error.code) {
+				case error.PERMISSION_DENIED:
+					mensaje.innerHTML = "El usuario no permitio acceder a la ubicacion"
+					break;
+				case error.POSITION_UNAVAILABLE:
+					mensaje.innerHTML = "Informacion de ubicacion no disponible"
+					break;
+				case error.TIMEOUT:
+					mensaje.innerHTML = "El tiempo para acceder a la ubicacion caduco."
+					break;
+				case error.UNKNOWN_ERROR:
+					mensaje.innerHTML = "Ocurrio un error desconocido."
+					break;
+				default:
+					mensaje.innerHTML = "Ocurrio un error sumamente desconocido."
+			}
+		}
+		
+		getLocation();
+	 </script>
+</body>
+</html>
