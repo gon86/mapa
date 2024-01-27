@@ -1,4 +1,4 @@
-//alert('hola mundo de nuevo');
+alert('hola mundo');
 
 //var map = L.map('map');
 //var map = L.map('map').setView([51.505, -0.09], 18);
