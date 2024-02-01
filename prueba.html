@@ -7,14 +7,19 @@
 	<title>Prueba</title>
 </head>
 <body>
-	 <div id="mensaje">Cargando el mensaje...</div>
+	 <div id="mensaje">Cargando respuesta...</div>
 	 <button onclick="getLocation();">Obtener ubicacion</button>
 	 <script>
 		const mensaje = document.getElementById("mensaje");
 
 		function getLocation() {
 			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition, showError);
+				const options = {
+					enableHighAccuracy: true,
+					timeout: 5000,
+					maximumAge: 0
+				};
+				navigator.geolocation.getCurrentPosition(showPosition, showError, options);
 			} else {
 				mensaje.innerHTML = "Geolocalizacion no soportada en este navegador.";
 			}
