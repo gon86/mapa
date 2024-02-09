@@ -7,15 +7,15 @@
 	<title>notificacion</title>
 </head>
 <body>
-   <h1>Prueba de notificacion</h1>
+   <h1>Prueba de notificaciones</h1>
    <button onclick="solicitar()">Solicitar permiso</button>
    <script>
      function solicitar(){
 	Notification.requestPermission().then((response) => {
            if(response === 'granted'){
-		setTimeout(()=>{
-		   new Notification('Notificacion creada en 5 segundos');
-		}, 5000);
+		new Notification('Notificacion creada luego de 5 segundos', {
+		   timestamp: Date.now() + 5000
+		});
 	   }
         });
      }
