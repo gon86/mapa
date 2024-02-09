@@ -12,9 +12,10 @@
    <script>
      function solicitar(){
 	Notification.requestPermission().then((response) => {
-           alert(response);
+           if(response === 'granted'){
+		new Notification('Hola soy una notificacion de prueba');
+	   }
         });
-        alert(Notification.permission);
      }
    </script>
 </body>
