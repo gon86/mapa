@@ -7,9 +7,11 @@
 	<title>notificacion</title>
 </head>
 <body>
-	 <h1>Prueba de notificacion</h1>
-	 <script>
-     
+   <h1>Prueba de notificacion</h1>
+   <script>
+     Notification.requestPermission().then((response) => {
+        alert(response);
+     });
    </script>
 </body>
 </html>
